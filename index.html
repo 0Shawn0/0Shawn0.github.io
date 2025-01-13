@@ -2,12 +2,78 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <div id="header" style="background-color:#00CCFF;">
-        <h2 style="width: 100%; height: 10%;" align="center">欢迎来到Shawn的主页！</h2>
-    </div>
     <meta charset="UTF-8">
     <title>Shawn's Website</title>
+    <style>
+        .input {
+          background-color: #E0E0E0;
+          width: 1000px;
+          height: 30px;
+          padding: 10px;
+          border: 2px solid white;
+          border-radius: 5px;
+        }
+
+        .input:focus {
+          background-color: #E8E8E8;
+          outline-color: rgb(0, 0, 0);
+          transition: .1s;
+          transition-property: box-shadow;
+        }
+
+        .chat {
+            float:left;
+            width:1500px;
+            height:600px;
+            background_color: #E0E0E0;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .chat h3 {
+            color: black;
+            font-size: 18px;
+            margin: 30px;
+        }
+    </style>
+
 </head>
 <body>
+    <div id="container" style="position: absolute; background-color: #F8F8F8; width: 100%; height: 100%; ">
+        <div id="header" style="background-color:#99FFFF; width:100%; height:10%; text-align:center; line-height:500%;">
+            <h1>欢迎来到Shawn的主页！</h1>
+        </div>
+        <div id="left" style="background-color:#D8D8D8; width:10%; height:80%; float:left;">
+            <div id="menu" style="background-color:#D8D8D8; width:100%; height:100%; text-align:center; line-height:300%;">
+                <a href="home.html" style="text-decoration:none">
+                    <h1>主页</h1>
+                </a><br>
+                <a href="about.html" style="text-decoration:none">
+                    <h1>关于我</h1>
+                </a><br>
+                <a href="contact.html" style="text-decoration:none">
+                    <h1>联系我</h1>
+                </a><br>
+            </div>
+        </div>
+        <div class="chat" id="info">
+
+        </div>
+        <br>
+        <br>
+        <div id="chat">
+            <input placeholder="Enter your Message..." class="input" id="msg">
+            <button onclick="getValue()">提交</button>
+            <script>
+                function getValue() {
+                    var input = document.getElementById('msg');
+                    var target = document.getElementById('info');
+                    var element = document.createElement('h3');
+                    element.innerHTML = input.value;
+                    target.appendChild(element);
+                }
+            </script>
+        </div>
+    </div>
 </body>
 </html>
